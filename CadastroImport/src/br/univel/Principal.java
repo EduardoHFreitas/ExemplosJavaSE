@@ -24,10 +24,11 @@ public class Principal {
 		BigDecimal cotacao = new BigDecimal(3.37); /* formato para valores MONETARIOS*/
 
 		listaPrd.forEach(e -> {
-			System.out.println("Id: " + e.getId());
-			System.out.println("DescriÃ§Ã£o: " + e.getDescricao());
-			System.out.println("PreÃ§o DÃ³lar: " + formatUS.format(e.getPreco()));
-			System.out.println("PreÃ§o Real: " + formatBR.format(e.getPreco().multiply(cotacao)));
+//			System.out.println("Id: " + e.getId());
+//			System.out.println("DescriÃ§Ã£o: " + e.getDescricao());
+//			System.out.println("PreÃ§o DÃ³lar: " + formatUS.format(e.getPreco()));
+//			System.out.println("PreÃ§o Real: " + formatBR.format(e.getPreco().multiply(cotacao)));
+
 		});
 
 	}
