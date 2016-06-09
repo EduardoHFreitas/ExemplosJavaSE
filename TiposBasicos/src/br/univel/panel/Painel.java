@@ -14,7 +14,7 @@ public class Painel extends JPanel {
 	private boolean alt = true;
 	private int r, g, b = 0;
 	private int step = 5;
-	
+
 	public Painel() {
 		setBackground(BLACK);
 

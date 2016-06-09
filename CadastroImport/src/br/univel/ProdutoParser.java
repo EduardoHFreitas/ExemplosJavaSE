@@ -54,13 +54,13 @@ public class ProdutoParser {
 		String strPreco = null;
 
 		try {
-			// strPreco = strSemCodigo.substring(indexDolar +
+			// strPreco = strSemCodigo.substring(indexDolar +         ADAPTAÇÕES TECNICAS
 			// 3).trim().replaceAll("\\.", "").replace(',', '.');
 			// preco = new BigDecimal(strPreco);
 
 			strPreco = strSemCodigo.substring(indexDolar + 3).trim();
-			preco = new BigDecimal(format.parse(strPreco).doubleValue());
-			preco.setScale(2, RoundingMode.HALF_EVEN);
+			preco = new BigDecimal(format.parse(strPreco).doubleValue()); //
+			preco.setScale(2, RoundingMode.HALF_EVEN); // arredondamento no mesmo padrão do excell
 
 		} catch (NumberFormatException | ParseException e) {
 
