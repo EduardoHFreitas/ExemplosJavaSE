@@ -24,8 +24,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class TelaTabela extends JFrame {
 
@@ -181,13 +183,29 @@ public class TelaTabela extends JFrame {
 
 	protected void preencheTabela() {
 
-		List<Produto> lista = new ArrayList<>();
+/*		List<Produto> lista = new ArrayList<>();
 
 		for (int i = 0; i < 10; i++) {
 			lista.add(new Produto(i, "Produto ", new BigDecimal(0)));
 		}
+*/
 
-		ProdutoModel model = new ProdutoModel(lista);
+		ReaderURL reader = new ReaderURL();
+		List<String> lista = reader.lerUrl();
+
+//		ReaderArquivo reader = new ReaderArquivo();
+//		List<String> lista = reader.lerArquivo();
+
+		ProdutoParser parser = new ProdutoParser();
+		List<Produto> listaPrd = parser.getProduto(lista);
+
+		NumberFormat formatUS = NumberFormat.getCurrencyInstance(new Locale("en", "US"));
+		NumberFormat formatBR = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+
+		BigDecimal cotacao = new BigDecimal(3.37); /* formato para valores MONETARIOS*/
+
+
+		ProdutoModel model = new ProdutoModel(listaPrd);
 		table.setModel(model);
 
 	}
