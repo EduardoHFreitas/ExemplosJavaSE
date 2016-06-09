@@ -21,13 +21,13 @@ public class Principal {
 		NumberFormat formatUS = NumberFormat.getCurrencyInstance(new Locale("en", "US"));
 		NumberFormat formatBR = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
-		BigDecimal cotacao = new BigDecimal(3.37);
+		BigDecimal cotacao = new BigDecimal(3.37); /* formato para valores MONETARIOS*/
 
 		listaPrd.forEach(e -> {
 			System.out.println("Id: " + e.getId());
-			System.out.println("Descrição: " + e.getDescricao());
-			System.out.println("Preço Dólar: " + formatUS.format(e.getPreco()));
-			System.out.println("Preço Real: " + formatBR.format(e.getPreco().multiply(cotacao)));
+			System.out.println("DescriÃ§Ã£o: " + e.getDescricao());
+			System.out.println("PreÃ§o DÃ³lar: " + formatUS.format(e.getPreco()));
+			System.out.println("PreÃ§o Real: " + formatBR.format(e.getPreco().multiply(cotacao)));
 		});
 
 	}

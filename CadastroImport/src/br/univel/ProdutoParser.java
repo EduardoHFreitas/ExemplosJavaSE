@@ -17,7 +17,7 @@ public class ProdutoParser {
 	public List<Produto> getProduto(List<String> listaStr) {
 		List<Produto> listaPrd = new ArrayList<>();
 
-		Pattern p = Pattern.compile("[0-9]+.*");
+		Pattern p = Pattern.compile("[0-9]+.*"); /* tenha no minimo 1 digito + qualquer caracter + 0 ou mais coisas*/
 
 		listaStr.forEach(e -> {
 
