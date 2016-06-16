@@ -10,10 +10,10 @@ import java.util.List;
 
 public class ReaderArquivo {
 
-	public List<String> lerArquivo() {
+	public List<String> lerArquivo(String arq) {
 		ArrayList<String> lista = new ArrayList<>();
 
-		try (FileReader fr = new FileReader(new File("lista.txt"));
+		try (FileReader fr = new FileReader(new File(arq));
 				BufferedReader br = new BufferedReader(fr)) {
 
 			String linha = null;
@@ -29,9 +29,9 @@ public class ReaderArquivo {
 		return lista;
 	}
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		ReaderArquivo arq = new ReaderArquivo();
 		arq.lerArquivo().forEach(System.out::println);
-	}
+	} */
 
 }
